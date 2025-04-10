@@ -24,19 +24,23 @@ def gradient_descent(start_point, learning_rate, num_iterations):
     return x, history
 # 初始设置
 start_point = 0.0
-learning_rate = 0.1
-num_iterations = 50
+learning_rate = 0.2
+num_iterations = 30
 
 # 执行梯度下降算法
 result, history = gradient_descent(start_point, learning_rate, num_iterations)
 print(f"最小值点: {result}")
 
 # 绘制结果
-x_vals = np.linspace(-1, 7, 600)
+x_vals = np.linspace(-1, 7, 60000)
 y_vals = f(x_vals)
 
 plt.plot(x_vals, y_vals, label=r'$f(x) = (x-3)^2$', color='blue')
 plt.scatter(history, f(np.array(history)), color='red', label='gradient descent', zorder=5)
+#  给点标上序号
+for i, x in enumerate(history):
+    plt.annotate(str(i), (x, f(x)), textcoords="offset points", xytext=(0,10), ha='center', fontsize=8, color='red')
+# plt.plot(history, f(np.array(history)), color='green', label='gradient descent', zorder=5)
 plt.title('Gradient Descent 2D')
 plt.xlabel('x')
 plt.ylabel('f(x)')
