@@ -3,7 +3,7 @@ name = "large-model"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 dependencies = [
     "ipython>=8.14.0",
     "matplotlib==3.9.4",
@@ -11,4 +11,5 @@ dependencies = [
     "pandas>=2.2.3",
     "scikit-learn>=1.6.1",
     "seaborn>=0.13.2",
+    "tensorflow==2.19.0"
 ]
